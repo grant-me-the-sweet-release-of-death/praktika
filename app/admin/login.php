@@ -15,22 +15,22 @@ try {
        }
    }
 } catch (Exception $e) { 
-   echo 'Ошибка: ' . htmlspecialchars($e->getMessage()); 
+   echo 'Error: ' . htmlspecialchars($e->getMessage()); 
 }
 ?>
 
 <!-- HTML форма для входа -->
-<h1>Вход в админку</h1>
+<h1>Enter admin console</h1>
 <form action="login.php" method="post">
    <div>
-       <label>Логин:</label>
+       <label>Login:</label>
        <input type="text" name="login" required>
    </div>
    <div>
-       <label>Пароль:</label>
+       <label>Password:</label>
        <input type="password" name="password" required>
    </div>
    <div>
-       <input type="submit" value="Войти">
+       <input type="submit" value="Login">
    </div>
 </form>
