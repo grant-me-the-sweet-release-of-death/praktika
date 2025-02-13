@@ -1,2 +1,2 @@
 <?php
-echo 'Добавление товара в каталог';
+echo 'Add a product to catalog';
