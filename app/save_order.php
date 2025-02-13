@@ -1,34 +1,30 @@
 <?php
-require_once '../core/init.php'; // Подключаем файл инициализации
+require_once '../core/init.php'; 
 
 try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Получаем данные из формы
         $customer = Cleaner::str($_POST['customer']);
         $email = Cleaner::str($_POST['email']);
         $phone = Cleaner::str($_POST['phone']);
         $address = Cleaner::str($_POST['address']);
         
-        // Получаем товары из корзины
         $basket = new Basket();
-        $basket->init(); // Загружаем существующую корзину
+        $basket->init();
         
         if (empty($basket->getItems())) {
-            throw new Exception("Корзина пуста. Невозможно оформить заказ.");
+            throw new Exception("Checkout is empty, cant place order.");
         }
 
-        // Создаем объект Order с полученными данными и товарами из корзины
         $order = new Order($customer, $email, $phone, $address, $basket->getItems());
 
-        // Сохраняем заказ через Eshop
         Eshop::saveOrder($order);
 
-        header('Location: /catalog'); // Переадресация на каталог после успешного оформления заказа
+        header('Location: /catalog'); 
         exit();
         
     } else {
-        throw new Exception('Неверный метод запроса.');
+        throw new Exception('Wrong requesting method.');
     }
 } catch (Exception $e) {
-    echo 'Ошибка: ' . htmlspecialchars($e->getMessage());
+    echo 'Error: ' . htmlspecialchars($e->getMessage());
 }
