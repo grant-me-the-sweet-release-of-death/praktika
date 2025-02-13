@@ -1,22 +1,19 @@
 <?php
-require_once '../core/init.php'; // Подключаем файл инициализации
+require_once '../core/init.php';
 
 try {
-    // Проверяем, что данные были отправлены методом POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $itemId = (int)$_POST['item_id']; // Получаем ID товара
+        $itemId = (int)$_POST['item_id'];
 
-        // Инициализация корзины
         $basket = new Basket();
-        $basket->init(); // Загружаем существующую корзину
+        $basket->init(); 
 
-        // Удаляем товар из корзины
         $basket->remove($itemId);
 
-        echo 'Удаление товара из корзины покупателя';
+        echo 'Delete product from customers checkout';
     } else {
-        throw new Exception('Неверный метод запроса.');
+        throw new Exception('Wrong requesting method.');
     }
 } catch (Exception $e) {
-    echo 'Ошибка: ' . htmlspecialchars($e->getMessage());
+    echo 'Error: ' . htmlspecialchars($e->getMessage());
 }
