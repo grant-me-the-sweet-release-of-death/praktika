@@ -1,23 +1,23 @@
-<h1>Оформление заказа</h1>
-<p>Вернуться в <a href='/catalog'>каталог</a></p>
+<h1>Order registration</h1>
+<p>Return to <a href='/catalog'>catalog</a></p>
 <form action="save_order" method="post">
     <div>
-        <label>Заказчик:</label>
+        <label>Customer:</label>
         <input type="text" name="customer" size="50" />
     </div>
     <div>
-        <label>Email заказчика:</label>
+        <label>Customer email:</label>
         <input type="email" name="email" size="50" />
     </div>
     <div>
-        <label>Телефон для связи:</label>
+        <label>Customer phone number:</label>
         <input type="phone" name="phone" size="50" />
     </div>
     <div>
-        <label>Адрес доставки:</label>
+        <label>Address:</label>
         <input type="text" name="address" size="50" />
     </div>
     <div>
-        <input type="submit" value="Заказать" />
+        <input type="submit" value="Order" />
     </div>
 </form>
