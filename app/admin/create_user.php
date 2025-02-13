@@ -1,12 +1,12 @@
-<h1>Добавить пользователя</h1>
-<p><a href='/admin'>Назад в админку</a></p>
+<h1>Add user</h1>
+<p><a href='/admin'>Back to admin console</a></p>
 <form action="save_user" method="post">
     <div>
-        <label>Логин:</label> 
+        <label>Login:</label> 
         <input type="text" name="login" size="25">
     </div>
     <div>
-        <label>Пароль:</label> 
+        <label>Password:</label> 
         <input type="password" name="password" size="25">
     </div>
     <div>
@@ -14,6 +14,6 @@
         <input type="email" name="email" size="25">
     </div>
     <div>
-        <input type="submit" value="Создать">
+        <input type="submit" value="make">
     </div>
 </form>
