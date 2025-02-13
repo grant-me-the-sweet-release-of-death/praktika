@@ -1,5 +1,5 @@
 <?php
-require_once '../core/init.php'; // Подключаем файл инициализации
+require_once '../core/init.php';
 
 try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
