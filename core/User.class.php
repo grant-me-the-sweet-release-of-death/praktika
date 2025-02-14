@@ -2,12 +2,12 @@
 class User {
     private $id;
     private $login;
-    private $password; // Хранится хэш пароля
+    private $password; 
     private $email;
     
     public function __construct($login, $password, $email) {
         $this->login = $login;
-        $this->password = $password; // Здесь должен быть хэш пароля
+        $this->password = $password; 
         $this->email = $email;
     }
 
@@ -24,7 +24,7 @@ class User {
     }
 
     public function getPassword() {
-        return $this->password; // Возвращает хэш пароля
+        return $this->password;
     }
 
     public function getEmail() {
