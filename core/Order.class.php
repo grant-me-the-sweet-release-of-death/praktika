@@ -6,7 +6,7 @@ class Order {
     private $phone;
     private $address;
     private $created;
-    private $items; // Массив с товарами (item_id => quantity)
+    private $items; 
     
 
     public function __construct($customer, $email, $phone, $address, $items = []) {
@@ -15,7 +15,7 @@ class Order {
         $this->phone = $phone;
         $this->address = $address;
         $this->items = $items;
-        $this->created = date('Y-m-d H:i:s'); // Устанавливаем дату создания заказа
+        $this->created = date('Y-m-d H:i:s');
     }
 
     public function getCustomer() {
@@ -40,17 +40,17 @@ class Order {
 
     public function addItem($itemId, $quantity) {
         if (isset($this->items[$itemId])) {
-            $this->items[$itemId] += $quantity; // Увеличиваем количество, если товар уже есть
+            $this->items[$itemId] += $quantity; 
         } else {
-            $this->items[$itemId] = $quantity; // Иначе добавляем новый товар
+            $this->items[$itemId] = $quantity; 
         }
     }
 
     public function getId() {
-        return $this->id; // ID будет установлен после сохранения
+        return $this->id; 
     }
 
     public function setId($id) {
-        $this->id = $id; // Устанавливаем ID заказа
+        $this->id = $id;
     }
 }
